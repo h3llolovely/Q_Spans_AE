@@ -20,11 +20,9 @@ function createUIPanel(thisObj) {
         // Resize the panel when the window is resized
         uiPanel.layout.layout(true);
         uiPanel.layout.resize();
-
-        uiPanel.onResizing = uiPanel.onResize = function() {
+	uiPanel.onResizing = uiPanel.onResize = function() {
             this.layout.resize();
             }
-
     }
 
     return uiPanel;
