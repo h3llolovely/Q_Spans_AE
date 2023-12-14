@@ -1,5 +1,5 @@
 # Q_Spans
-Sends either Composition marker spans or selected layer marker spans to the Render Queue and appends the marker comment to the filename.
+Sends a Composition's marker spans or a Selected layer's marker spans to the Render Queue and appends the marker span's comment text to the output filename.
 Useful for queueing multiple parts of a single comp, without having to rename each output.
 
 Known Issue:
