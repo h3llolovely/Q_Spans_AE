@@ -6,7 +6,12 @@ AE scriptUI panel
 Sends a Composition's marker spans or a Selected layer's marker spans to the Render Queue and appends the marker span's comment text to the output filename.
 Useful for queueing multiple parts of a single comp, without having to rename each output.
 
+![AfterFX_JM1CcuLONZ](https://github.com/h3llolovely/Q_Spans/assets/101287022/8e689506-e5f6-46d9-affb-f6465aa9bec7) ![AfterFX_ALWip1zzYd](https://github.com/h3llolovely/Q_Spans/assets/101287022/84f30f42-bd8f-4a5b-991f-489ee57cccf7)
+
+![AfterFX_jjDH4MsVZe](https://github.com/h3llolovely/Q_Spans/assets/101287022/08a15a47-2d2a-4880-9a53-0b5b4db3c72d) ![AfterFX_94p04nzTrA](https://github.com/h3llolovely/Q_Spans/assets/101287022/3bc717a5-8057-4a3e-b4b5-868d97a5a592)
+
 Known Issues:
+----------
 - A non-span marker (A single marker w/ no duration) will break the script.
 - Project file must be saved first.
   - Render path is set to a "_Renders" directory relative to the Projectfile location (i.e. ./_Renders/)
