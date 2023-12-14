@@ -1,26 +1,31 @@
 // Create and show the UI
 var scriptUIPanel = createUIPanel();
-scriptUIPanel.show();
 
-function createUIPanel() {
+function createUIPanel(thisObj) {
     // Create a new window
-    var uiPanel = new Window("palette", "Q Spans", undefined, { resizeable: true });
+    var uiPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "Q Spans", undefined, { resizeable: true });
+    if (uiPanel !== null) {
+        // Add buttons to the UI
+        var btnQueueComp = uiPanel.add("button", undefined, "Q Comp Spans");
+        var btnQueueLayer = uiPanel.add("button", undefined, "Q Layer Spans");
 
-    // Add buttons to the UI
-    var btnQueueComp = uiPanel.add("button", undefined, "Q Comp Spans");
-    var btnQueueLayer = uiPanel.add("button", undefined, "Q Layer Spans");
+        // Set button callbacks
+        btnQueueComp.onClick = queueCompMarkerSpans;
+        btnQueueLayer.onClick = queueLayerMarkerSpans;
 
-    // Set button callbacks
-    btnQueueComp.onClick = queueCompMarkerSpans;
-    btnQueueLayer.onClick = queueLayerMarkerSpans;
+        // Set layout and properties
+        uiPanel.orientation = "column";
+        uiPanel.alignChildren = "center";
 
-    // Set layout and properties
-    uiPanel.orientation = "column";
-    uiPanel.alignChildren = "center";
+        // Resize the panel when the window is resized
+        uiPanel.layout.layout(true);
+        uiPanel.layout.resize();
 
-    // Resize the panel when the window is resized
-    uiPanel.layout.layout(true);
-    uiPanel.layout.resize();
+        uiPanel.onResizing = uiPanel.onResize = function() {
+            this.layout.resize();
+            }
+
+    }
 
     return uiPanel;
 }
@@ -95,3 +100,4 @@ function queueLayerMarkerSpans() {
         alert("The selected layer has no markers.");
     }
 }
+scriptUIPanel.show(this);
