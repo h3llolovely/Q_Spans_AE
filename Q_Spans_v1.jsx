@@ -15,7 +15,7 @@ function createUIPanel() {
     btnQueueLayer.onClick = queueLayerMarkerSpans;
 
     // Set layout and properties
-    uiPanel.orientation = "rows";
+    uiPanel.orientation = "column";
     uiPanel.alignChildren = "center";
 
     // Resize the panel when the window is resized
