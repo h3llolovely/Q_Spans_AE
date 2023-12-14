@@ -1,4 +1,4 @@
-# Q_Spans
+# Q Spans
 
 ![AfterFX_JM1CcuLONZ](https://github.com/h3llolovely/Q_Spans/assets/101287022/8865453c-d654-43bd-85f6-03c5879fea09)
 AE scriptUI panel
