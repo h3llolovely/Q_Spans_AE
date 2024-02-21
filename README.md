@@ -29,7 +29,6 @@ Queued Items
 
 Known Issues:
 ---------------
-- A non-span marker (A single marker w/ no duration) will break the script.
-- Project file must be saved first.
-  - Render path is set to a "_Renders" directory relative to the Projectfile location (i.e. ./_Renders/)
+- Project file must be saved first.  
+- Render path is set to a "_Renders" directory relative to the Projectfile location (i.e. ./_Renders/)
 ![explorer_zVg8a2zFVc](https://github.com/h3llolovely/Q_Spans/assets/101287022/8f49b2b2-c3f6-49f3-ace6-c36ef3a46882)
