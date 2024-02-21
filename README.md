@@ -8,7 +8,7 @@ AE scriptUI panel
 Sends either Composition marker spans or selected layer marker spans to the Render Queue and appends the marker comment to the filename.
 Useful for queueing multiple parts of a single comp, without having to rename each output.
 
-1.0 - Initial release - Dec 2023
+1.0 - Initial release - Dec 2023  
 1.1 - Verify marker spans and ignore non-span markers, better error handling - FEB 2024
 
 ----------
