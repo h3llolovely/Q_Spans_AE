@@ -9,6 +9,7 @@ Sends either Composition marker spans or selected layer marker spans to the Rend
 Useful for queueing multiple parts of a single comp, without having to rename each output.
 
 1.0 - Initial release - Dec 2023
+1.1 - Verify marker spans and ignore non-span markers, better error handling - FEB 2024
 
 ----------
 Sends a Composition's marker spans or a Selected layer's marker spans to the Render Queue and appends the marker span's comment text to the output filename.
