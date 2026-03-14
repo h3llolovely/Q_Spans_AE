@@ -13,7 +13,7 @@ AE scriplet versions [available here](https://github.com/h3llolovely/AE_Scriptle
 1.0 - Initial release - Dec 2023  
 1.1 - Verify marker spans and ignore non-span markers, better error handling - FEB 2024  
 2.0 - minor changes - SEPT 2024  
-3.0 - Added undo groups, improved error handling, added skipped non-span marker report upon completion.  
+3.0 - Added undo groups, improved error handling, added skipped non-span marker report upon completion. - MAR 2026  
 
 ----------
 Sends a Composition's marker spans or a Selected layer's marker spans to the Render Queue and appends the marker span's comment text to the output filename.
