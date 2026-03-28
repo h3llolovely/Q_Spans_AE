@@ -32,6 +32,14 @@ New Features:
 - Unnamed marker dialog with OK/Skip and Cancel All. (with queued item's rollback)
 - Help button with full usage description.
 
+Known Issues:
+---------------
+- Project file must be saved first.
+- Native OS Output Folder picker defaults to projectfile's location, but Windows dialogue ignores this and starts at the Desktop. Not tested on Mac OS.
+- Output Modules may fail to load from...
+  - Windows:```%AppData%\Roaming\Adobe\After Effects\<latest version>\Adobe After Effects <latest version> Prefs-indep-output.txt```
+  - Mac: ```~/Library/Preferences/Adobe/After Effects/<latest version>/Adobe After Effects <latest version> Prefs-indep-output.txt```
+
 Screenshots:
 ---------------
 The palette:
@@ -63,9 +71,3 @@ Layer spans queued:
 
 Help:
 ![QSP_09_Help](https://github.com/user-attachments/assets/5299b021-9edc-40d4-8edd-71daac38c032)  
-
-Known Issues:
----------------
-- Project file must be saved first.
-- Native OS Output Folder picker defaults to projectfile's location, but Windows dialogue ignores this and starts at the Desktop. Not tested on Mac OS.
-- Output Modules may fail to load from ```%AppData%\Roaming\Adobe\After Effects\<version>\Adobe After Effects <version> Prefs-indep-output.txt``` 
