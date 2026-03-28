@@ -277,24 +277,22 @@ function showUnnamedMarkerDialog(markerIndex, timecodeStr) {
     btnGroup.orientation = "row";
     btnGroup.spacing     = 6;
 
-    var btnCancel = btnGroup.add("button", undefined, "Cancel All");
-    var spacer    = btnGroup.add("group");
+    var btnCancel   = btnGroup.add("button", undefined, "Cancel All");
+    var spacer      = btnGroup.add("group");
     spacer.alignment = ["fill", "center"];
-    var btnOk     = btnGroup.add("button", undefined, "OK", true);
-    var btnSkip   = btnGroup.add("button", undefined, "Skip");
+    var btnConfirm  = btnGroup.add("button", undefined, "Name / Skip", true);
 
     nameField.addEventListener("keydown", function (e) {
-        if (e.keyName === "Enter") { btnOk.notify("onClick"); }
+        if (e.keyName === "Enter") { btnConfirm.notify("onClick"); }
     });
 
     var result = { action: "skip" };
 
-    btnOk.onClick = function () {
-        result = { action: "ok", name: nameField.text };
-        dlg.close();
-    };
-    btnSkip.onClick = function () {
-        result = { action: "skip" };
+    btnConfirm.onClick = function () {
+        var name = nameField.text;
+        result = (name !== "")
+            ? { action: "ok", name: name }
+            : { action: "skip" };
         dlg.close();
     };
     btnCancel.onClick = function () {
@@ -605,20 +603,21 @@ function createUIPanel(thisObj) {
     btnQueueLayer.onClick = queueLayerMarkerSpans;
     btnHelp.onClick = function () {
         alert(
-            "Q Spans Pro\n\n" +
-            "Before Queuing:\n" +
-            "Set an Output Module template.\n" +
-            "Set an Output Folder.\n" +
-            "- Use Browse to select a folder via the OS dialog.\n" +
-            "- Or paste an absolute or relative path directly into the field and press Enter.\n" +
-            "- Relative paths are resolved from the project file's location.\n\n" +
-            "Q Comp Spans:\n" +
-            "- Adds a render queue item for each span marker on the active composition.\n\n" +
-            "Q Layer Spans:\n" +
-            "- Adds a render queue item for each span marker on the selected layer.\n\n" +
-            "Markers with no comment will prompt you to name them.\n" +
-            "- Pressing OK with a blank comment will auto-number the span; same as Skip.\n" +
-            "- Zero-duration marker spans are skipped."
+            "Q Spans Plus\n\n" +
+            "Set up:\n" +
+            "1. Set an Output Module template.\n" +
+            "2. Set an Output Folder.\n" +
+            "   - Use Browse to select a folder via the OS dialog.\n" +
+            "   - Or paste an absolute or relative path into the field and press Enter.\n" +
+            "   - Relative paths are resolved from the project file's location.\n\n" +
+            "Queueing:\n" +
+            "1. Q Comp Spans:\n" +
+            "   - Adds a render queue item for each marker span on the active composition.\n\n" +
+            "2. Q Layer Spans:\n" +
+            "   - Adds a render queue item for each marker span on the selected layer.\n\n" +
+            "Marker spans without a comment will prompt you to name them.\n" +
+            "Press Name / Skip with a name entered to use it, or blank to auto-number.\n" +
+            "Zero-duration marker spans are skipped."
         );
     };
 
