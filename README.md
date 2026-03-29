@@ -2,6 +2,7 @@
 
 ![QSP_00](https://github.com/user-attachments/assets/cf6e41de-6d01-4b40-a0ce-14fabb1e4555)
 
+**AE scriptUI panel**
 Sends either Composition marker spans or a selected layer's marker spans to the Render Queue and appends the marker comment to the filename.
 Useful for queueing multiple parts of a single comp, without having to rename each output.
 
