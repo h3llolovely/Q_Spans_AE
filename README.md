@@ -1,4 +1,4 @@
-# Q Spans
+# Q-Spans
 
 ![QSP_00](https://github.com/user-attachments/assets/cf6e41de-6d01-4b40-a0ce-14fabb1e4555)
 
