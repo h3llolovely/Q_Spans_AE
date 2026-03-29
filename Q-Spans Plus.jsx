@@ -1,5 +1,5 @@
 /**========================================================================
- * ?                  Q_Spans_Plus.jsx
+ * ?                  Q-Spans Plus.jsx
  * @author         :  Jason Schwarz (https://hellolovely.tv)
  * @email          :  hello@hellolovely.tv
  * @version        :  1.0.0
