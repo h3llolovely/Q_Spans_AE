@@ -6,6 +6,8 @@
 Sends either Composition marker spans or a selected layer's marker spans to the Render Queue and appends the marker comment to the filename.
 Useful for queueing multiple parts of a single comp, without having to rename each output.
 
+Q-Spans Plus is very useful when paired with [MarkerPrep](https://github.com/h3llolovely/MarkerPrep) to modify markers before render queueing.
+
 Simplified AE scriplet versions [available here](https://github.com/h3llolovely/AE_Scriptlets/tree/main/Render). For use with kBar, MoBar, AEBar, etc...
 
 ---------------
