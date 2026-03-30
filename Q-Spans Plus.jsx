@@ -120,7 +120,7 @@ function getAEPrefsFolder() {
     // Locate the most recently modified AE version folder under AppData/Roaming/Adobe/After Effects
     var isWin   = ($.os.indexOf("Windows") !== -1);
     var basePath = isWin
-        ? Folder.appData.fsName + "/Adobe/After Effects"
+        ? $.getenv("APPDATA") + "/Adobe/After Effects"
         : Folder.userData.fsName + "/Library/Preferences/Adobe/After Effects";
 
     var baseFolder = new Folder(basePath);
@@ -167,15 +167,15 @@ function getTemplatesFromPrefs() {
         while (!prefsFile.eof) {
             var line = prefsFile.readln();
 
-            // Match: "Output Module Template Name # N" = "TemplateName"
-            var nameMatch = line.match(/^"Output Module Template Name # (\d+)"\s*=\s*"(.*)"\s*$/);
+            // Match: "Output Module Spec Strings Name N" = "TemplateName"
+            var nameMatch = line.match(/^\s*"Output Module Spec Strings Name (\d+)"\s*=\s*"(.*)"\s*$/);
             if (nameMatch) {
                 names[parseInt(nameMatch[1], 10)] = nameMatch[2];
                 continue;
             }
 
-            // Match: "Default OM Index" = "N"
-            var defMatch = line.match(/^"Default OM Index"\s*=\s*"(\d+)"\s*$/);
+            // Match: "Default OM Index" = "N"  (value may or may not be quoted)
+            var defMatch = line.match(/^\s*"Default OM Index"\s*=\s*"?(\d+)"?\s*$/);
             if (defMatch) {
                 defaultIndex = parseInt(defMatch[1], 10);
             }
@@ -192,7 +192,7 @@ function getTemplatesFromPrefs() {
         var indexMap = []; // maps array position -> original pref index (for defaultIndex lookup)
         for (var j = 0; j < indices.length; j++) {
             var n = names[indices[j]];
-            if (n.charAt(0) !== "(") {
+            if (n.charAt(0) !== "(" && n.indexOf("_HIDDEN") !== 0) {
                 result.templates.push(n);
                 indexMap.push(indices[j]);
             }
